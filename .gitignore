@@ -1,0 +1,7 @@
+.env
+
+/data
+/build
+/bin
+*.db
+*.log

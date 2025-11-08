@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  bot:
+    build: .
+    container_name: birthday_bot
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data      # сохраняем базу на хосте
+    env_file:
+      - .env                  # загружаем .env напрямую
+    environment:
+      - DB_PATH=/app/data/birthdays.db
+    working_dir: /app
